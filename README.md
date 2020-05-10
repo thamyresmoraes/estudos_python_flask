@@ -1,13 +1,13 @@
 # estudos_python_flask
-Dedicado aos meus estudos de python + framework flask;
+Dedicado aos meus estudos de python + framework flask
 
-Pré-requisito:
+*Pré-requisito:*
     - Python 3 instalado;
 
-Para executar um arquivo .py:
+*Para executar um arquivo .py:*
     - No terminal na pasta onde está o arquivo digite `python nome_do_arquivo.py'`
 
-As aulas de python para iniciante e pyhton avançado estão nos arquivos .py `python_iniciante.py` e python `python_avançado.py` com os seguintes conteúdos:
+*As aulas de python para iniciante e pyhton avançado estão nos arquivos .py `python_iniciante.py` e python `python_avançado.py` com os seguintes conteúdos:*
 
 `python_iniciante`
   - Variáveis;
@@ -21,7 +21,7 @@ As aulas de python para iniciante e pyhton avançado estão nos arquivos .py `py
   - Operadores aritméticos;
   - Operadores de comparação;
   - Operadores Lógicos;
-  - Métodos python;
+  - Métodos python (Built in);
   - Listas, tuplas e sets;
   - Condicionais (if e else);
   - Loops (while e for);
