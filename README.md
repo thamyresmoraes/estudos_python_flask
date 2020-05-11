@@ -7,7 +7,7 @@ Dedicado aos meus estudos de python + framework flask
 *Para executar um arquivo .py:*
     - No terminal na pasta onde está o arquivo digite `python nome_do_arquivo.py'`
 
-*As aulas de python para iniciante e pyhton avançado estão nos arquivos .py `python_iniciante.py` e python `python_avançado.py` com os seguintes conteúdos:*
+*As aulas de python para iniciante e pyhton avançado estão nos arquivos .py `python_iniciante.py` e python `python_avancado.py` com os seguintes conteúdos:*
 
 `python_iniciante`
   - Variáveis;
@@ -26,7 +26,7 @@ Dedicado aos meus estudos de python + framework flask
   - Condicionais (if e else);
   - Loops (while e for);
 
- `python_avançado`
+ `python_avancado`
   - Compreensão de lista;
   - Dicionários;
   - Objetos e classes;
