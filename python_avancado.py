@@ -1,4 +1,5 @@
-
+import datetime
+import functools
 """
 
     PYTHON AVANÇADO
@@ -137,19 +138,144 @@ print()
 print("###### Heranças ######")
 print()
 
+class Funcionario():
+    def __init__(self, nome, salario):
+        self.nome = nome
+        self.salario = salario
+
+    def dados(self):
+        return {'nome': self.nome, 'salario': self.salario}
+
+#criando funcionario
+fabio = Funcionario('Fábio', 7000)
+
+#buscando dados do funcionario criado
+fabio.dados()
+
+"""
+vamos criar um administrador e ele vai ter total as funções de um funcionário e algo a mais.
+Então vamos criar a classe admin que vai Herdar a classe Funcionario
+
+"""
+
+class Admin(Funcionario):
+    def __init__(self, nome, salario):
+        super().__init__(nome, salario) #super referencia a classe funcionario, chamando a classe super e a função dela init passando o nome e o salário
+
+    def atualizar_dados(self, nome):
+        self.nome == nome
+        return self.dados()
+
+#Criando admin
+gustavo = Admin('Gustavo', 13000)
+fabio.dados()
+gustavo.dados()
+
+#Gustavo tem função adm
+gustavo.atualizar_dados('Gusta')
+gustavo.dados() #dados atualizados
 
 
 print()
 print("###### Métodos de Classes e Métodos Estáticos ######")
 print()
 
+class Funcionario():
+    aumento = 1.04
+
+    def __init__(self, nome, salario):
+        self.nome = nome
+        self.salario = salario
+
+    def dados(self):
+        return{'nome': self.nome, 'salario': self.salario}
+
+    def aplicar_aumento(self):
+        self.salario = self.salario * self.aumento
+        return self.salario
+
+    @classmethod
+    def definir_novo_aumento(cls):
+        cls.aumento = novo_aumento
+
+    @staticmethod
+    def dia_util(dia):
+        #segunda-feira = 0
+        #domingo = 6
+        if dia.weekday() == 5 or dia.weekday() == 6:
+            return False
+        return True
+
+
+luisa = Funcionario('Luisa', 14000)
+print(luisa.dados())
+print(luisa.aplicar_aumento())
+
+
+"""
+    @classmethod -> É uma função que afeta a classe com um todo e recebe cls automaticamente
+
+    @staticmethod -> Não exige nenhum argumento da classe Funcionario
+"""
+
+my_date = datetime.date(2020, 5, 22)
+Funcionario.dia_util(my_date)
+
+
 
 print()
 print("###### **args e **kwargs ######")
 print()
 
+"""
+args -> são argumentos
+kwargs -> Keyord arguments (argumentos de palavras chaves)
 
+"""
+
+def meu_metodo(arg1, arg2):
+    return arg1 + arg2
+
+meu_metodo(5, 6)
+
+#mas se eu quiser somais mais números?
+#Use args enviei quantos argumentos vc quiser
+
+def soma_simplificada(*args):
+    return sum(args)
+
+soma_simplificada(4, 5, 9, 1101, 14548, 48, 145)
+
+#kwargs tem uma palavra chave como argumento,
+def  metodo_kwargs(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+metodo_kwargs(3, 'sasa', 123, 'alguma coisa', nome = 'Pedro', idade=58)
+
+#sempre coloque args antes de kwargs
 
 print()
 print("###### Decoradores ######")
 print()
+
+"""
+    os decoradores utilizam a biblioteca functools, e altera o funcionamento da função que está embaixo 
+
+    wraps -> Embrulhe a minha função
+"""
+
+def meu_decorador(funcao):
+    @functools.wraps(funcao)
+    def func_que_roda_funcao():
+        print("******Embrulhando função no decorador *********")
+        funcao()
+        print("**********Fechando embrulho*******")
+    return func_que_roda_funcao
+
+@meu_decorador
+def minha_funcao():
+    print("Eu sou uma função!")
+
+
+minha_funcao()
