@@ -30,7 +30,7 @@ Dedicado aos meus estudos de python + framework flask
   - Compreensão de lista;
   - Dicionários;
   - Objetos e classes;
-  - Herença;
+  - Herança;
   - Métodos de classes e Métodos estáticos;
   - `*args e **kargs`
   - Decoradores
