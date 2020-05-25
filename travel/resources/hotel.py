@@ -50,17 +50,17 @@ class Hoteis(Resource):
 
         if not parametros.get('cidade'):
             consulta = "SELECT * FROM hoteis \
-            WHERE (estrelas > ? and estrelas < ?) \
-            and (diaria > ? and diaria < ?) \
-            LIMIT ? OFFSET offset?"
-            tupla = tupla([parametros[chave] for chave in parametros])
+            WHERE (estrelas >= ? and estrelas <= ?) \
+            and (diaria >= ? and diaria <= ?) \
+            LIMIT ? OFFSET ?"
+            tupla = tuple([parametros[chave] for chave in parametros])
             resultado = cursor.execute(consulta, tupla)
         else:
             consulta = "SELECT * FROM hoteis \
-            WHERE (estrelas > ? and estrelas < ?) \
-            and (diaria > ? and diaria < ?) \
-            and cidade = ? LIMIT ? OFFSET offset?"
-            tupla = tupla([parametros[chave] for chave in parametros])
+            WHERE (estrelas >= ? and estrelas <= ?) \
+            and (diaria >= ? and diaria <= ?) \
+            and cidade = ? LIMIT ? OFFSET ?"
+            tupla = tuple([parametros[chave] for chave in parametros])
             resultado = cursor.execute(consulta, tupla)
 
         hoteis = []
@@ -72,7 +72,7 @@ class Hoteis(Resource):
                 'diaria': linha[3],
                 'cidade': linha[4],
             })
-            
+
         return {'hoteis': hoteis}
 
 class Hotel(Resource):
