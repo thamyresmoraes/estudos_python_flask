@@ -48,6 +48,7 @@ class Hotel(Resource):
     argumentos.add_argument('estrelas', type=float, required=True, help="The field 'estrelas' cannot be left blank" )
     argumentos.add_argument('diaria')
     argumentos.add_argument('cidade')
+    argumentos.add_argument('site_id',type=int, required=True, help="The field 'site_id' cannot be left blank")
 
     def get(self, hotel_id):
         hotel = HotelModel.find_hotel(hotel_id)
