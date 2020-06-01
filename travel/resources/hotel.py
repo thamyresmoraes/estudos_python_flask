@@ -3,6 +3,7 @@ from models.hotel import HotelModel
 from flask_jwt_extended import jwt_required
 from resources.filtros import normalize_path_params, consulta_com_cidade, consulta_sem_cidade
 import sqlite3
+from models.site import SiteModel
 
 path_params = reqparse.RequestParser()
 path_params.add_argument('cidade', type=str)
@@ -64,6 +65,10 @@ class Hotel(Resource):
 
         dados = Hotel.argumentos.parse_args()
         hotel = HotelModel(hotel_id, **dados)
+
+        if not SiteModel.find_by_id(dados['site_id']):
+            return {'message': 'The hotel must be associated to a valid site id.'}, 400
+
         try:
             hotel.save_hotel()
         except:
