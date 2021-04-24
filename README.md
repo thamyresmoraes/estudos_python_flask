@@ -34,3 +34,4 @@ Dedicado aos meus estudos de python + framework flask
   - Métodos de classes e Métodos estáticos;
   - `*args e **kargs`
   - Decoradores
+
